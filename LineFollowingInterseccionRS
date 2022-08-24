@@ -1,0 +1,54 @@
+await movefor(100,100,1);
+while (true)
+{
+    await readInputs();
+    if ( ( irLeft() < 50 ) && ( irRight() < 50 ) )
+    {
+         await movefor(100,-100,.2);
+      break;
+      
+    }
+    else if ( irLeft() < 50 )
+    {
+        move(-40, 70);
+    }
+    else if (irRight() < 50)
+    {
+        move(70, -40);
+    }
+    else
+    {
+        move(100, 100);
+    }
+}
+
+while (true)
+{
+    await readInputs();
+    if ( ( irLeft() < 50 ) && ( irRight() < 50 ) )
+    {
+         TRight();  
+    }
+    else if ( irLeft() < 50 )
+    {
+        move(-40, 70);
+    }
+    else if (irRight() < 50)
+    {
+        move(70, -40);
+    }
+    else
+    {
+        move(100, 100);
+    }
+}
+async function   TRight()
+{
+     move(10, 10);
+     await gofor(.1);
+      while( irRight() <  50 )
+      {
+         move(-40, 40);
+         await readInputs();
+      }
+}
